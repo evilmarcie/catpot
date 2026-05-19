@@ -115,6 +115,7 @@ public class CardsController : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         if(a.cardFront == b.cardFront)
         {
+            SoundEffects.instance.MatchSFX();
             catExpressions.SetTrigger("Happy");
             matchCount++;
             if (matchCount >= spritePairs.Count / 2)
@@ -130,11 +131,10 @@ public class CardsController : MonoBehaviour
         }
         else
         {
+            SoundEffects.instance.IncorrectMatchSFX();
             catExpressions.SetTrigger("Sad");
             a.TriggerFlip();
             b.TriggerFlip();
-            //a.HideCard();
-            //b.HideCard();
         }
 
     }

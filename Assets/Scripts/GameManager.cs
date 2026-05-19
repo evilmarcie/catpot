@@ -36,7 +36,6 @@ public class GameManager : MonoBehaviour
         GameScreen.SetActive(false);
         WinScreen.SetActive(false);
         LoseScreen.SetActive(false);
-        timer.SetActive(false);
         intro.SetActive(false);
         tutorial.SetActive(false);
     }
@@ -66,7 +65,7 @@ public class GameManager : MonoBehaviour
         adoptionFund.sprite = AdoptionFundSprites[fundSpriteInt];
         CardsController.instance.PrepareSprites(round);
         CardsController.instance.CreateCards();
-        timer.SetActive(true);
+        timer.GetComponent<Timer>().timerActive = true;
     }
 
     public void RoundComplete()
@@ -76,13 +75,15 @@ public class GameManager : MonoBehaviour
 
     IEnumerator BeatRound()
     {
+        timer.GetComponent<Timer>().timerActive = false;
+
         fundSpriteInt ++;
         if (fundSpriteInt < AdoptionFundSprites.Length)
         {
             adoptionFund.sprite = AdoptionFundSprites[fundSpriteInt];   
         }
 
-        jackpotPopup.SetActive(true);
+        JackpotPopup();
         
         CardsController.instance.matchCount = 0;
         round++;
@@ -92,6 +93,7 @@ public class GameManager : MonoBehaviour
             CardsController.instance.PrepareSprites(round);
             CardsController.instance.CreateCards();
             timer.GetComponent<Timer>().remainingTime = 20;
+            timer.GetComponent<Timer>().timerActive = true;
         
         }
         else
@@ -110,7 +112,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator EndGame()
     {
-        jackpotPopup.SetActive(true);
+        JackpotPopup();
         yield return new WaitForSeconds(2);
 
         WinScreen.SetActive(true);
@@ -143,7 +145,14 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            intro.SetActive(false);
             tutorial.SetActive(true);
         }
+    }
+
+    void JackpotPopup()
+    {
+        jackpotPopup.SetActive(true);
+        SoundEffects.instance.JackpotSFX();
     }
 }

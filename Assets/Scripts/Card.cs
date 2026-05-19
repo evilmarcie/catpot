@@ -38,6 +38,7 @@ public class Card : MonoBehaviour
     public void TriggerFlip()
     {
         cardAnimator.SetTrigger("Flip");
+        SoundEffects.instance.CardFlipSFX();
     }
 
     public void ShowCard()
