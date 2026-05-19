@@ -88,8 +88,10 @@ public class CardsController : MonoBehaviour
     {
         if (card.isSelected == false)
         {
+
+            sfxManager.instance.PlaySFX(sfxManager.instance.popclick_sfx, 0.5f);
+
             card.TriggerFlip();
-            //card.ShowCard();
 
             if (firstSelected == null)
             {
@@ -115,27 +117,34 @@ public class CardsController : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         if(a.cardFront == b.cardFront)
         {
-            SoundEffects.instance.MatchSFX();
+            sfxManager.instance.PlaySFX(sfxManager.instance.match_sfx, 0.5f);
             catExpressions.SetTrigger("Happy");
             matchCount++;
             if (matchCount >= spritePairs.Count / 2)
             {
-                foreach(Transform child in cardSpace)
-                {
-                    Destroy(child.gameObject);
-                }
-                
                 GameManager.instance.RoundComplete();
             }
             
         }
         else
         {
-            SoundEffects.instance.IncorrectMatchSFX();
+            sfxManager.instance.PlaySFX(sfxManager.instance.incorrectMatch_sfx, 0.5f);
             catExpressions.SetTrigger("Sad");
             a.TriggerFlip();
             b.TriggerFlip();
         }
 
+    }
+
+    public void ClearCards()
+    {
+        if(cardSpace.childCount > 0)
+        {
+            foreach(Transform child in cardSpace)
+            {
+                Destroy(child.gameObject);
+            }
+        }
+        
     }
 }

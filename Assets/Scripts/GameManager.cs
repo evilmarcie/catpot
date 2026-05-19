@@ -49,12 +49,13 @@ public class GameManager : MonoBehaviour
     {
         HomeMenu.SetActive(false);
         intro.SetActive(true);
+        sfxManager.instance.PlaySFX(sfxManager.instance.click_sfx, 0.8f);
         ProgressIntro();
     }
 
     public void StartGame()
     {
-
+        sfxManager.instance.PlaySFX(sfxManager.instance.click_sfx, 0.8f);
         GameScreen.SetActive(true);
         tutorial.SetActive(false);
         RoundOne();
@@ -90,9 +91,10 @@ public class GameManager : MonoBehaviour
 
         if (round <= 3)
         {
+            CardsController.instance.ClearCards();
             CardsController.instance.PrepareSprites(round);
             CardsController.instance.CreateCards();
-            timer.GetComponent<Timer>().remainingTime = 20;
+            timer.GetComponent<Timer>().remainingTime = 25;
             timer.GetComponent<Timer>().timerActive = true;
         
         }
@@ -115,6 +117,7 @@ public class GameManager : MonoBehaviour
         JackpotPopup();
         yield return new WaitForSeconds(2);
 
+        sfxManager.instance.PlaySFX(sfxManager.instance.yay_sfx, 0.8f);
         WinScreen.SetActive(true);
         jackpotPopup.SetActive(false);
         timer.SetActive(false);
@@ -126,6 +129,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        sfxManager.instance.PlaySFX(sfxManager.instance.crying_sfx, 1f);
         LoseScreen.SetActive(true);
         timer.SetActive(false);
     }
@@ -138,6 +142,7 @@ public class GameManager : MonoBehaviour
 
     public void ProgressIntro()
     {
+
         if (currentSlide < introSprites.Length)
         {
             introComic.sprite = introSprites[currentSlide];
@@ -148,11 +153,16 @@ public class GameManager : MonoBehaviour
             intro.SetActive(false);
             tutorial.SetActive(true);
         }
+
+        if (currentSlide > 1)
+        {
+            sfxManager.instance.PlaySFX(sfxManager.instance.tutorialPageTurn_sfx, 0.9f);
+        }
     }
 
     void JackpotPopup()
     {
         jackpotPopup.SetActive(true);
-        SoundEffects.instance.JackpotSFX();
+        sfxManager.instance.PlaySFX(sfxManager.instance.jackpot_sfx, 1f);
     }
 }
