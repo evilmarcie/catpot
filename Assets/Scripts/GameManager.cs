@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
             yield break;
         }
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSecondsRealtime(1);
         jackpotPopup.SetActive(false);
 
         yield return null;
