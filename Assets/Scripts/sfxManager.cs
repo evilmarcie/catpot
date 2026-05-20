@@ -30,5 +30,7 @@ public class sfxManager : MonoBehaviour
         click_sfx, 
         tutorialPageTurn_sfx, 
         yay_sfx, 
-        crying_sfx;
+        crying_sfx,
+        clock_tick,
+        bell;
 }
