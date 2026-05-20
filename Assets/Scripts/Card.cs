@@ -55,11 +55,6 @@ public class Card : MonoBehaviour
 
     public void FadeCard()
     {
-        // Image img = GetComponent<Image>();
-        // Color colour = img.color;
-        // colour.a = 0.8f;
-        // img.color = colour;
-
         Button button = GetComponent<Button>();
         button.interactable = false;
     }
