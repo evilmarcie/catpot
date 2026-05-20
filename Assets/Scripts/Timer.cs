@@ -8,6 +8,10 @@ public class Timer : MonoBehaviour
 
     public bool timerActive;
 
+    [SerializeField] Animator textAnimator;
+    bool isPulsing = false;
+    Color32 warningColor = new Color32(167, 52, 82, 255);
+
     void Update()
     {
         if (timerActive == true)
@@ -23,6 +27,16 @@ public class Timer : MonoBehaviour
                 if (!GameManager.instance.WinScreen.activeSelf)
                 {
                     GameManager.instance.GameOver();
+                }
+            }
+
+            if (remainingTime <= 6)
+            {
+                if (!isPulsing)
+                {
+                    timer.color = warningColor;
+                    textAnimator.SetTrigger("Pulse");
+                    isPulsing = true;
                 }
             }
         }    
