@@ -72,6 +72,7 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(BeatRound());
     }
+    private int maxRounds = 7;
 
     IEnumerator BeatRound()
     {
@@ -88,12 +89,12 @@ public class GameManager : MonoBehaviour
         CardsController.instance.matchCount = 0;
         round++;
 
-        if (round <= 3)
+        if (round <= maxRounds)
         {
             CardsController.instance.ClearCards();
             CardsController.instance.PrepareSprites(round);
             CardsController.instance.CreateCards();
-            timer.GetComponent<Timer>().remainingTime = 25;
+            timer.GetComponent<Timer>().remainingTime += 10;
             timer.GetComponent<Timer>().timerActive = true;
         
         }

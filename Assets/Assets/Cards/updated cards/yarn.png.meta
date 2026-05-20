@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 792a6c24ad0c3924f87ad2a18afd8629
+guid: 2fd86877e230d0742b045c17a480cb38
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5234569132144361138
-    second: adoption fund (full)_0
+      213: -630575523452681867
+    second: yarn_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: adoption fund (full)_0
+      name: yarn_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 5
         y: 0
-        width: 1275
-        height: 246
+        width: 589
+        height: 839
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2be70b944ece4a840800000000000000
-      internalID: 5234569132144361138
+      spriteID: 5710c8007eebf37f0800000000000000
+      internalID: -630575523452681867
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      adoption fund (full)_0: 5234569132144361138
+      yarn_0: -630575523452681867
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

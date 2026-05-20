@@ -23,18 +23,7 @@ public class CardsController : MonoBehaviour
     {
         cardCount = 0;
 
-        if (round == 1)
-        {
-            cardCount = 4;
-        }
-        else if (round == 2)
-        {
-            cardCount = 6;
-        }
-        else if (round == 3)
-        {
-            cardCount = 8;
-        }
+        cardCount = 2 + (round * 2);
 
         if (spritePairs != null){spritePairs.Clear();}
         spritePairs = new List<Sprite>();
@@ -65,7 +54,7 @@ public class CardsController : MonoBehaviour
     {  
         RefreshGrid();
 
-        for(int i = 0; i < spritePairs.Count; i++)
+        for (int i = 0; i < spritePairs.Count; i++)
         {
             GameObject cardParent = Instantiate(cardPrefab, cardSpace);
             cardParent.GetComponent<CardSizeController>().ResizeCards();
@@ -77,8 +66,6 @@ public class CardsController : MonoBehaviour
 
     void RefreshGrid()
     {
-        Debug.Log("refresh grid");
-
         FlexibleLayoutGroup grid = cardSpace.GetComponent<FlexibleLayoutGroup>(); 
         
         if (cardCount == 2)
@@ -88,8 +75,6 @@ public class CardsController : MonoBehaviour
         }
         else
         {
-            Debug.Log(cardSpace.childCount.ToString());
-
             grid.fitType = FlexibleLayoutGroup.FitType.FIXEDCOLUMNS;
             
             if (cardCount/2 % 2 == 0)
@@ -140,14 +125,11 @@ public class CardsController : MonoBehaviour
         if(a.cardFront == b.cardFront)
         {
             sfxManager.instance.PlaySFX(sfxManager.instance.match_sfx, 0.5f);
+            catExpressions.SetTrigger("Happy");
             matchCount++;
             if (matchCount >= cardCount / 2)
             {
                 GameManager.instance.RoundComplete();
-            } else
-            {
-                // trigger animation on all matches except last (jackpot popup partially covers cat)
-                catExpressions.SetTrigger("Happy");
             }
             
         }

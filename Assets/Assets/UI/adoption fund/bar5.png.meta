@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0f37387772bd9964c878d4d3a1f05dbf
+guid: cbb3f8c4828c29841b79b7c93ec39337
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8966945178157639174
-    second: fish_0
+      213: -804184279354845912
+    second: bar5_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fish_0
+      name: bar5_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 4
-        width: 542
-        height: 797
+        x: 2
+        y: 0
+        width: 1181
+        height: 244
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 606ec70712df07c70800000000000000
-      internalID: 8966945178157639174
+      spriteID: 825d91f98a6f6d4f0800000000000000
+      internalID: -804184279354845912
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      fish_0: 8966945178157639174
+      bar5_0: -804184279354845912
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

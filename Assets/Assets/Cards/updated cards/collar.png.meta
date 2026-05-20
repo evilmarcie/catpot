@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 87d7f52d13be03f49b391d5183beec09
+guid: ddb99e7bc1f56d64799d0e9b7d1f7e93
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5107520998666888875
-    second: rat toy_0
+      213: 3687361246892077070
+    second: collar_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rat toy_0
+      name: collar_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 4
-        width: 542
-        height: 797
+        x: 5
+        y: 0
+        width: 589
+        height: 839
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5599c9766b07e19b0800000000000000
-      internalID: -5107520998666888875
+      spriteID: e003b8f74832c2330800000000000000
+      internalID: 3687361246892077070
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      rat toy_0: -5107520998666888875
+      collar_0: 3687361246892077070
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

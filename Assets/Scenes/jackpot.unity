@@ -590,6 +590,7 @@ GameObject:
   - component: {fileID: 233748832}
   - component: {fileID: 233748834}
   - component: {fileID: 233748833}
+  - component: {fileID: 233748835}
   m_Layer: 5
   m_Name: TimerText
   m_TagString: Untagged
@@ -716,6 +717,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 233748831}
   m_CullTransparentMesh: 1
+--- !u!95 &233748835
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233748831}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6f12ecf9143bb422ea84630bb901c52c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &234520003
 GameObject:
   m_ObjectHideFlags: 0
@@ -1858,10 +1881,14 @@ MonoBehaviour:
   round: 0
   jackpotPopup: {fileID: 1061626689}
   AdoptionFundSprites:
-  - {fileID: 21300000, guid: d7f8dddcc66af16429619a2c1fc4a6f9, type: 3}
-  - {fileID: 21300000, guid: 6f2c4c02f1e291642930447af39db395, type: 3}
-  - {fileID: 21300000, guid: e043a64c0b1135449a4a4b4bc6a2b953, type: 3}
-  - {fileID: 21300000, guid: 792a6c24ad0c3924f87ad2a18afd8629, type: 3}
+  - {fileID: 21300000, guid: 35962054aa12c0f4f9360df8a3679f8e, type: 3}
+  - {fileID: 21300000, guid: 9453294703252c64ca8359754c1c5e25, type: 3}
+  - {fileID: 21300000, guid: 311512c53e3dd0a4889ac19650dca62c, type: 3}
+  - {fileID: 21300000, guid: 3cfdd5c5c9f7d2040bdd688a5b164c7e, type: 3}
+  - {fileID: 21300000, guid: cbb3f8c4828c29841b79b7c93ec39337, type: 3}
+  - {fileID: 21300000, guid: 736e1a89780dcda429657a01af5d470e, type: 3}
+  - {fileID: 21300000, guid: 584182121d103b84188d0b5c3e715406, type: 3}
+  - {fileID: 21300000, guid: c97b6cf5d8881dc438f70ff61db74327, type: 3}
   adoptionFund: {fileID: 1695280984}
   GameScreen: {fileID: 86050957}
   HomeMenu: {fileID: 1523792132}
@@ -2225,14 +2252,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CardsController
   sprites:
-  - {fileID: 6855384008421316537, guid: 5ed0eda844fc6ce4d81ec168b1d5094c, type: 3}
-  - {fileID: 3687361246892077070, guid: d123b12ed362c964e92ddb821c1fe28e, type: 3}
-  - {fileID: 8966945178157639174, guid: 946eed1634e1aee48bfb2b385df28391, type: 3}
-  - {fileID: -1045181238759104467, guid: f52a0dbf05fafc14491f172fd549de40, type: 3}
-  - {fileID: -6215915644911070973, guid: e4628cc8048cd604b85117154d2b91d8, type: 3}
-  - {fileID: -5107520998666888875, guid: edfe6351256aae34cb2b05eedd528553, type: 3}
-  - {fileID: 1271661819729597233, guid: 8af67ed51d63fe546a1e6db51746bf72, type: 3}
-  - {fileID: -8266704911989601980, guid: 2f9d10c3d69b8d147a12e0849ed5f386, type: 3}
+  - {fileID: 21300000, guid: da82d7ef6db76a4408cee5d47b2a6da0, type: 3}
+  - {fileID: 21300000, guid: ddb99e7bc1f56d64799d0e9b7d1f7e93, type: 3}
+  - {fileID: 21300000, guid: 19cc5ebe48da0714491dc6de76c95deb, type: 3}
+  - {fileID: 21300000, guid: 4d25aee9ea300f24b8309a24f87617d1, type: 3}
+  - {fileID: 21300000, guid: 48e9faa08efa2c848856e6fa0a0853aa, type: 3}
+  - {fileID: 21300000, guid: f0436f9962184de4398441791bb5921d, type: 3}
+  - {fileID: 21300000, guid: af3b6faaf798a524684c4b9be55b3571, type: 3}
+  - {fileID: 21300000, guid: 2fd86877e230d0742b045c17a480cb38, type: 3}
   cardPrefab: {fileID: 68149199855524110, guid: 60557bdd8607cb74b8b6e70a10cefad7, type: 3}
   cardSpace: {fileID: 1425353644}
   matchCount: 0
@@ -3516,7 +3543,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d7f8dddcc66af16429619a2c1fc4a6f9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 35962054aa12c0f4f9360df8a3679f8e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3626,6 +3653,7 @@ MonoBehaviour:
   timer: {fileID: 233748833}
   remainingTime: 20
   timerActive: 0
+  textAnimator: {fileID: 233748835}
 --- !u!1 &1987000574
 GameObject:
   m_ObjectHideFlags: 0

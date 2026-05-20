@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6f2c4c02f1e291642930447af39db395
+guid: 48e9faa08efa2c848856e6fa0a0853aa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8943184838895187399
-    second: adoption fund (1)_0
+      213: -6215915644911070973
+    second: paw_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: adoption fund (1)_0
+      name: paw_0
       rect:
         serializedVersion: 2
-        x: 2
+        x: 5
         y: 0
-        width: 1181
-        height: 244
+        width: 589
+        height: 839
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7c5b10b5a339c1c70800000000000000
-      internalID: 8943184838895187399
+      spriteID: 301584f77a1acb9a0800000000000000
+      internalID: -6215915644911070973
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      adoption fund (1)_0: 8943184838895187399
+      paw_0: -6215915644911070973
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
