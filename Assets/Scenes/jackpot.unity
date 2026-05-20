@@ -352,8 +352,8 @@ RectTransform:
   m_Children:
   - {fileID: 383104682}
   - {fileID: 1425353644}
-  - {fileID: 1695280983}
   - {fileID: 271700748}
+  - {fileID: 1695280983}
   - {fileID: 1799541971}
   - {fileID: 1061626690}
   m_Father: {fileID: 0}
@@ -1735,6 +1735,7 @@ MonoBehaviour:
   HomeMenu: {fileID: 1523792132}
   timer: {fileID: 6964939858470222690, guid: 3315f15901dc44047abad3a8c351cc07, type: 3}
   gameCanvas: {fileID: 86050961}
+  fundBarAnim: {fileID: 1695280987}
   WinScreen: {fileID: 781462929}
   LoseScreen: {fileID: 938299797}
   intro: {fileID: 909622636}
@@ -1759,7 +1760,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1061626690
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3340,6 +3341,8 @@ GameObject:
   - component: {fileID: 1695280983}
   - component: {fileID: 1695280985}
   - component: {fileID: 1695280984}
+  - component: {fileID: 1695280987}
+  - component: {fileID: 1695280986}
   m_Layer: 5
   m_Name: Adoption Fund
   m_TagString: Untagged
@@ -3404,6 +3407,40 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1695280982}
   m_CullTransparentMesh: 1
+--- !u!114 &1695280986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695280982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7906df629df295e449701e9e1cc3333d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AdoptionFund
+--- !u!95 &1695280987
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695280982}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4a05ef9f800d19149a79dafaa167b69f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!224 &1799541971 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2022392130323495804, guid: 3315f15901dc44047abad3a8c351cc07, type: 3}

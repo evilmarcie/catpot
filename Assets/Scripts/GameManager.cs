@@ -80,15 +80,20 @@ public class GameManager : MonoBehaviour
     private int maxRounds = 7;
     [SerializeField] Transform gameCanvas;
 
-    IEnumerator BeatRound()
+    public void FundBar()
     {
-        Timer.instance.timerActive = false;
-
         fundSpriteInt ++;
         if (fundSpriteInt < AdoptionFundSprites.Length)
         {
             adoptionFund.sprite = AdoptionFundSprites[fundSpriteInt];   
         }
+    }
+
+    [SerializeField] Animator fundBarAnim;
+
+    IEnumerator BeatRound()
+    {
+        Timer.instance.timerActive = false;
 
         JackpotPopup();
         
@@ -102,6 +107,11 @@ public class GameManager : MonoBehaviour
             CardsController.instance.CreateCards();
             
             Timer timerCont = Timer.instance;
+
+            yield return new WaitForSecondsRealtime(1.5f);
+            jackpotPopup.SetActive(false);
+            fundBarAnim.SetTrigger("BarPopup");
+            yield return new WaitForSecondsRealtime(1.5f);
             
             if(timerCont.isPulsing == true)
             {
@@ -126,10 +136,6 @@ public class GameManager : MonoBehaviour
             StartCoroutine(EndGame());
             yield break;
         }
-
-        yield return new WaitForSecondsRealtime(1);
-        jackpotPopup.SetActive(false);
-
         yield return null;
     }
 
