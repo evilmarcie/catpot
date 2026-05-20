@@ -118,11 +118,14 @@ public class CardsController : MonoBehaviour
         if(a.cardFront == b.cardFront)
         {
             sfxManager.instance.PlaySFX(sfxManager.instance.match_sfx, 0.5f);
-            catExpressions.SetTrigger("Happy");
             matchCount++;
             if (matchCount >= spritePairs.Count / 2)
             {
                 GameManager.instance.RoundComplete();
+            } else
+            {
+                // trigger animation on all matches except last (jackpot popup partially covers cat)
+                catExpressions.SetTrigger("Happy");
             }
             
         }
