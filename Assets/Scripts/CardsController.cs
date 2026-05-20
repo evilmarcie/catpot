@@ -12,12 +12,7 @@ public class CardsController : MonoBehaviour
 
     int cardCount;
 
-    public static CardsController instance;
-
-    void Awake()
-    {
-        instance = this;
-    }
+    public static CardsController instance; void Awake(){instance = this;}
 
     public void PrepareSprites(int round)
     {
@@ -67,25 +62,43 @@ public class CardsController : MonoBehaviour
     void RefreshGrid()
     {
         FlexibleLayoutGroup grid = cardSpace.GetComponent<FlexibleLayoutGroup>(); 
-        
-        if (cardCount == 2)
+        int round = GameManager.instance.round;
+
+
+        if(cardCount % 4 == 0)
         {
-            grid.fitType = FlexibleLayoutGroup.FitType.FIXEDROWS;
-            grid.rows = 1;
+            grid.fitType = FlexibleLayoutGroup.FitType.FIXEDCOLUMNS;
+            grid.columns = 4;
         }
         else
         {
-            grid.fitType = FlexibleLayoutGroup.FitType.FIXEDCOLUMNS;
-            
-            if (cardCount/2 % 2 == 0)
-            {
-                grid.columns = 4;
-            }
-            else
-            {
-                grid.columns = 3;
-            }
+            grid.fitType = FlexibleLayoutGroup.FitType.FIXEDROWS;
+            grid.rows = 2; 
         }
+
+        // if (round == 1)
+        // {
+        //     grid.fitType = FlexibleLayoutGroup.FitType.FIXEDROWS;
+        //     grid.rows = 1; 
+        // }
+        // if (round == 2 || round == 5 || round == 7)
+        // {
+        //     grid.columns = 2;   
+        // }
+        // if (round == 3)
+        // {
+        //     grid.columns = 4;
+        // }
+        // if (round == 4)
+        // {
+        //     grid.columns = 5;
+        // }
+        // if (round == 6)
+        // {
+        //     grid.columns = 7;
+        // }
+
+
     }
 
     Card firstSelected;

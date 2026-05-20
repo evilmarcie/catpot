@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -6,6 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public int round;
+    public float roundTime;
 
     [SerializeField] GameObject jackpotPopup;
 
@@ -65,7 +67,10 @@ public class GameManager : MonoBehaviour
         adoptionFund.sprite = AdoptionFundSprites[fundSpriteInt];
         CardsController.instance.PrepareSprites(round);
         CardsController.instance.CreateCards();
-        timer.GetComponent<Timer>().timerActive = true;
+
+        Timer.instance.remainingTime = 15;
+        roundTime = 15;
+        Timer.instance.timerActive = true;
     }
 
     public void RoundComplete()
@@ -73,10 +78,11 @@ public class GameManager : MonoBehaviour
         StartCoroutine(BeatRound());
     }
     private int maxRounds = 7;
+    [SerializeField] Transform gameCanvas;
 
     IEnumerator BeatRound()
     {
-        timer.GetComponent<Timer>().timerActive = false;
+        Timer.instance.timerActive = false;
 
         fundSpriteInt ++;
         if (fundSpriteInt < AdoptionFundSprites.Length)
@@ -94,9 +100,26 @@ public class GameManager : MonoBehaviour
             CardsController.instance.ClearCards();
             CardsController.instance.PrepareSprites(round);
             CardsController.instance.CreateCards();
-            timer.GetComponent<Timer>().remainingTime += 10;
-            timer.GetComponent<Timer>().timerActive = true;
-        
+            
+            Timer timerCont = Timer.instance;
+            
+            if(timerCont.isPulsing == true)
+            {
+                timerCont.DestroyTimer();
+                GameObject newTimer = Instantiate(timer, gameCanvas);
+                newTimer.transform.SetSiblingIndex(4);
+            }
+
+            do
+            {
+                new WaitForEndOfFrame();
+            }
+            while(Timer.instance == null);
+
+            timerCont = Timer.instance;
+            roundTime += 10;
+            timerCont.remainingTime = roundTime;
+            timerCont.timerActive = true;
         }
         else
         {
@@ -120,7 +143,7 @@ public class GameManager : MonoBehaviour
         sfxManager.instance.PlaySFX(sfxManager.instance.yay_sfx, 0.8f);
         WinScreen.SetActive(true);
         jackpotPopup.SetActive(false);
-        timer.SetActive(false);
+        Timer.instance.gameObject.SetActive(false);
 
         yield return null;
     }
@@ -131,7 +154,7 @@ public class GameManager : MonoBehaviour
     {
         sfxManager.instance.PlaySFX(sfxManager.instance.crying_sfx, 1f);
         LoseScreen.SetActive(true);
-        timer.SetActive(false);
+        Timer.instance.gameObject.SetActive(false);
     }
 
     [SerializeField] GameObject intro;

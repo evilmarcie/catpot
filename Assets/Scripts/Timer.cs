@@ -3,13 +3,15 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
+    public static Timer instance; void Awake(){instance =  this;}
+
     public TextMeshProUGUI timer;
-    public float remainingTime = 15;
+    public float remainingTime;
 
     public bool timerActive;
 
-    [SerializeField] Animator textAnimator;
-    bool isPulsing = false;
+    public Animator textAnimator;
+    [HideInInspector] public bool isPulsing = false;
     Color32 warningColor = new Color32(167, 52, 82, 255);
 
     void Update()
@@ -45,5 +47,10 @@ public class Timer : MonoBehaviour
         int seconds = Mathf.FloorToInt(remainingTime % 60);
         timer.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         
-    }   
+    }
+
+    public void DestroyTimer()
+    {
+        Destroy(gameObject);
+    } 
 }
