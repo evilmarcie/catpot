@@ -10,8 +10,9 @@ public class Timer : MonoBehaviour
 
     public bool timerActive;
 
-    public Animator textAnimator;
-    [HideInInspector] public bool isPulsing = false;
+    [SerializeField] Animator textAnimator;
+    bool isPulsing = false;
+    bool hasPlayedDing = false;
     Color32 warningColor = new Color32(167, 52, 82, 255);
 
     void Update()
@@ -32,12 +33,22 @@ public class Timer : MonoBehaviour
                 }
             }
 
+            if (remainingTime <= 1)
+            {
+                if(!hasPlayedDing)
+                {
+                    hasPlayedDing = true;
+                    sfxManager.instance.PlaySFX(sfxManager.instance.bell, 0.8f);
+                }
+            }
+
             if (remainingTime <= 6)
             {
                 if (!isPulsing)
                 {
                     timer.color = warningColor;
                     textAnimator.SetTrigger("Pulse");
+                    sfxManager.instance.PlaySFX(sfxManager.instance.clock_tick, 0.6f);
                     isPulsing = true;
                 }
             }
