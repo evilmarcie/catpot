@@ -11,7 +11,7 @@ public class Timer : MonoBehaviour
     public bool timerActive;
 
     [SerializeField] Animator textAnimator;
-    bool isPulsing = false;
+    public bool isPulsing = false;
     bool hasPlayedDing = false;
     Color32 warningColor = new Color32(167, 52, 82, 255);
 

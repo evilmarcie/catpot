@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -53,7 +52,7 @@ public class CardsController : MonoBehaviour
         }
     }
 
-    [SerializeField] GameObject cardPrefab;
+    public Card cardPrefab;
     [SerializeField] public Transform cardSpace; 
 
     public void CreateCards()
@@ -62,9 +61,7 @@ public class CardsController : MonoBehaviour
 
         for (int i = 0; i < spritePairs.Count; i++)
         {
-            GameObject cardParent = Instantiate(cardPrefab, cardSpace);
-            cardParent.GetComponent<CardSizeController>().ResizeCards();
-            Card card = cardParent.GetComponentInChildren<Card>();
+            Card card = Instantiate(cardPrefab, cardSpace);
             card.SetSprite(spritePairs[i]);
             card.controller = this;
         }
@@ -73,42 +70,22 @@ public class CardsController : MonoBehaviour
     void RefreshGrid()
     {
         FlexibleLayoutGroup grid = cardSpace.GetComponent<FlexibleLayoutGroup>(); 
+        grid.fitType = FlexibleLayoutGroup.FitType.FixedColumns;
         int round = GameManager.instance.round;
 
-
-        if(cardCount % 4 == 0)
+        if (round == 1)
         {
-            grid.fitType = FlexibleLayoutGroup.FitType.FIXEDCOLUMNS;
-            grid.columns = 4;
+            grid.fitType = FlexibleLayoutGroup.FitType.FixedRows;
+            grid.rows = 1;
+        }
+        else if(round == 6)
+        {
+            grid.columns = 5;
         }
         else
         {
-            grid.fitType = FlexibleLayoutGroup.FitType.FIXEDROWS;
-            grid.rows = 2; 
+            grid.columns = 4;
         }
-
-        // if (round == 1)
-        // {
-        //     grid.fitType = FlexibleLayoutGroup.FitType.FIXEDROWS;
-        //     grid.rows = 1; 
-        // }
-        // if (round == 2 || round == 5 || round == 7)
-        // {
-        //     grid.columns = 2;   
-        // }
-        // if (round == 3)
-        // {
-        //     grid.columns = 4;
-        // }
-        // if (round == 4)
-        // {
-        //     grid.columns = 5;
-        // }
-        // if (round == 6)
-        // {
-        //     grid.columns = 7;
-        // }
-
 
     }
 
@@ -149,6 +126,8 @@ public class CardsController : MonoBehaviour
         if(a.cardFront == b.cardFront)
         {
             sfxManager.instance.PlaySFX(sfxManager.instance.match_sfx, 0.5f);
+            a.FadeCard();
+            b.FadeCard();
             catExpressions.SetTrigger("Happy");
             matchCount++;
             if (matchCount >= cardCount / 2)

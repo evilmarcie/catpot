@@ -2102,7 +2102,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f0436f9962184de4398441791bb5921d, type: 3}
   - {fileID: 21300000, guid: af3b6faaf798a524684c4b9be55b3571, type: 3}
   - {fileID: 21300000, guid: 2fd86877e230d0742b045c17a480cb38, type: 3}
-  cardPrefab: {fileID: 68149199855524110, guid: 60557bdd8607cb74b8b6e70a10cefad7, type: 3}
+  cardPrefab: {fileID: 5585480220178721877, guid: 5066511f230659c489589f14aa2f4d96, type: 3}
   cardSpace: {fileID: 1425353644}
   matchCount: 0
   catExpressions: {fileID: 271700751}
@@ -2516,6 +2516,8 @@ MonoBehaviour:
   tutorialPageTurn_sfx: {fileID: 8300000, guid: e987c8d5d57abb7418700c0bc6fb98d2, type: 3}
   yay_sfx: {fileID: 8300000, guid: 4e2553dc0dfb3074bb8981684268cc85, type: 3}
   crying_sfx: {fileID: 8300000, guid: 00dbaf0a27050f6418eb07d26be965ff, type: 3}
+  clock_tick: {fileID: 8300000, guid: d71b5458a31f94110a0d9286948af874, type: 3}
+  bell: {fileID: 8300000, guid: e279d2b17a54b39478dad2b748a3cd34, type: 3}
 --- !u!1 &1398300702
 GameObject:
   m_ObjectHideFlags: 0
@@ -2751,8 +2753,7 @@ MonoBehaviour:
   fitType: 4
   rows: 0
   columns: 4
-  cellSize: {x: 230.18738, y: NaN}
-  spacing: {x: 5, y: 5}
+  spacing: {x: 20, y: 20}
   fitX: 1
   fitY: 1
 --- !u!1 &1501987072
