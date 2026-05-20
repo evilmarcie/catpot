@@ -21,16 +21,27 @@ public class CardsController : MonoBehaviour
 
     public void PrepareSprites(int round)
     {
-        cardCount = 0;
-
+        // create list of all card sprites
+        List<Sprite> cardList = new List<Sprite>();
+        for (int i = 0; i < sprites.Length; i++)
+        {
+            cardList.Add(sprites[i]);
+        }
+  
         cardCount = 2 + (round * 2);
-
-        if (spritePairs != null){spritePairs.Clear();}
+        
+        if (spritePairs != null) { spritePairs.Clear(); }
         spritePairs = new List<Sprite>();
         for (int i = 0; i < cardCount/2; i++)
         {
-            spritePairs.Add(sprites[i]);
-            spritePairs.Add(sprites[i]);
+            // pick random sprite from picking list
+            int randomIndex = Random.Range(0, cardList.Count - 1);
+            Sprite newSprite = cardList[randomIndex];
+            spritePairs.Add(newSprite);
+            spritePairs.Add(newSprite);
+            
+            // remove picked sprite from picking list
+            cardList.Remove(newSprite);
         }
         ShuffleSprites(spritePairs);
     }
