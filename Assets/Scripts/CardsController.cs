@@ -58,6 +58,9 @@ public class CardsController : MonoBehaviour
 
     public void CreateCards()
     {  
+        firstSelected = null;
+        secondSelected = null;
+
         RefreshGrid();
 
         for (int i = 0; i < spritePairs.Count; i++)
@@ -91,14 +94,13 @@ public class CardsController : MonoBehaviour
 
     }
 
-    Card firstSelected;
-    Card secondSelected;
+    public Card firstSelected;
+    public Card secondSelected;
 
     public void SetSelected(Card card)
     {
         if (card.isSelected == false)
         {
-
             sfxManager.instance.PlaySFX(sfxManager.instance.popclick_sfx, 0.5f);
 
             card.TriggerFlip();
@@ -113,8 +115,6 @@ public class CardsController : MonoBehaviour
             {
                 secondSelected = card;
                 StartCoroutine(CheckMatch(firstSelected, secondSelected));
-                firstSelected = null;
-                secondSelected = null;
             }
         }
     }
@@ -124,7 +124,7 @@ public class CardsController : MonoBehaviour
 
     IEnumerator CheckMatch(Card a, Card b)
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.5f);
         if(a.cardFront == b.cardFront)
         {
             sfxManager.instance.PlaySFX(sfxManager.instance.match_sfx, 0.5f);
@@ -145,6 +145,10 @@ public class CardsController : MonoBehaviour
             a.TriggerFlip();
             b.TriggerFlip();
         }
+        firstSelected = null;
+        secondSelected = null;
+
+        yield break;
 
     }
 

@@ -9,7 +9,7 @@ public class Card : MonoBehaviour
     public Sprite cardBack;
     public Sprite cardFront;
 
-    public bool isSelected;
+    public bool isSelected = false;
 
     public CardsController controller;
 
