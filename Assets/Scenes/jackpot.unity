@@ -2933,8 +2933,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: bank up your jackpot winnings after round to save up for the cat of your
-    dreams...
+  m_text: bank up your jackpot winnings after each round to save up for the cat of
+    your dreams...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c0124e745dd6ac145b1397dd37be889c, type: 2}
   m_sharedMaterial: {fileID: -2246773235759051803, guid: c0124e745dd6ac145b1397dd37be889c, type: 2}
