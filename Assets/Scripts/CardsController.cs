@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,8 @@ public class CardsController : MonoBehaviour
     [SerializeField] Sprite[] sprites;
 
     private List<Sprite> spritePairs;
+
+    int cardCount;
 
     public static CardsController instance;
 
@@ -18,7 +21,7 @@ public class CardsController : MonoBehaviour
 
     public void PrepareSprites(int round)
     {
-        int cardCount = 0;
+        cardCount = 0;
 
         if (round == 1)
         {
@@ -55,29 +58,48 @@ public class CardsController : MonoBehaviour
         }
     }
 
-    [SerializeField] Card cardPrefab;
+    [SerializeField] GameObject cardPrefab;
     [SerializeField] public Transform cardSpace; 
 
     public void CreateCards()
     {  
+        RefreshGrid();
+
         for(int i = 0; i < spritePairs.Count; i++)
         {
-            Card card = Instantiate(cardPrefab, cardSpace);
+            GameObject cardParent = Instantiate(cardPrefab, cardSpace);
+            cardParent.GetComponent<CardSizeController>().ResizeCards();
+            Card card = cardParent.GetComponentInChildren<Card>();
             card.SetSprite(spritePairs[i]);
             card.controller = this;
         }
     }
 
-    void Update()
+    void RefreshGrid()
     {
-        GridLayoutGroup grid = cardSpace.GetComponent<GridLayoutGroup>(); 
-        if (cardSpace.childCount == 6)
+        Debug.Log("refresh grid");
+
+        FlexibleLayoutGroup grid = cardSpace.GetComponent<FlexibleLayoutGroup>(); 
+        
+        if (cardCount == 2)
         {
-            grid.constraintCount = 3;
+            grid.fitType = FlexibleLayoutGroup.FitType.FIXEDROWS;
+            grid.rows = 1;
         }
         else
         {
-            grid.constraintCount = 4;
+            Debug.Log(cardSpace.childCount.ToString());
+
+            grid.fitType = FlexibleLayoutGroup.FitType.FIXEDCOLUMNS;
+            
+            if (cardCount/2 % 2 == 0)
+            {
+                grid.columns = 4;
+            }
+            else
+            {
+                grid.columns = 3;
+            }
         }
     }
 
@@ -120,7 +142,7 @@ public class CardsController : MonoBehaviour
             sfxManager.instance.PlaySFX(sfxManager.instance.match_sfx, 0.5f);
             catExpressions.SetTrigger("Happy");
             matchCount++;
-            if (matchCount >= spritePairs.Count / 2)
+            if (matchCount >= cardCount / 2)
             {
                 GameManager.instance.RoundComplete();
             }

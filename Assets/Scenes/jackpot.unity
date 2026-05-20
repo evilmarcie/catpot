@@ -2210,7 +2210,7 @@ MonoBehaviour:
   - {fileID: -5107520998666888875, guid: edfe6351256aae34cb2b05eedd528553, type: 3}
   - {fileID: 1271661819729597233, guid: 8af67ed51d63fe546a1e6db51746bf72, type: 3}
   - {fileID: -8266704911989601980, guid: 2f9d10c3d69b8d147a12e0849ed5f386, type: 3}
-  cardPrefab: {fileID: 5585480220178721877, guid: 5066511f230659c489589f14aa2f4d96, type: 3}
+  cardPrefab: {fileID: 68149199855524110, guid: 60557bdd8607cb74b8b6e70a10cefad7, type: 3}
   cardSpace: {fileID: 1425353644}
   matchCount: 0
   catExpressions: {fileID: 271700751}
@@ -2773,7 +2773,7 @@ GameObject:
   - component: {fileID: 1425353644}
   - component: {fileID: 1425353647}
   - component: {fileID: 1425353646}
-  - component: {fileID: 1425353645}
+  - component: {fileID: 1425353648}
   m_Layer: 5
   m_Name: Card Area
   m_TagString: Untagged
@@ -2800,30 +2800,6 @@ RectTransform:
   m_AnchoredPosition: {x: -310.02527, y: -123}
   m_SizeDelta: {x: -804.2504, y: -277.9531}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1425353645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1425353643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GridLayoutGroup
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 4
-  m_StartCorner: 0
-  m_StartAxis: 0
-  m_CellSize: {x: 226.4, y: 335.7}
-  m_Spacing: {x: 30, y: 30}
-  m_Constraint: 1
-  m_ConstraintCount: 4
 --- !u!114 &1425353646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2862,6 +2838,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425353643}
   m_CullTransparentMesh: 1
+--- !u!114 &1425353648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425353643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8bd95f5a6f096c4994bff939b6375bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlexibleLayoutGroup
+  m_Padding:
+    m_Left: 90
+    m_Right: 90
+    m_Top: 90
+    m_Bottom: 90
+  m_ChildAlignment: 4
+  fitType: 4
+  rows: 0
+  columns: 4
+  cellSize: {x: 218.93738, y: NaN}
+  spacing: {x: 20, y: 20}
+  fitX: 1
+  fitY: 1
 --- !u!1 &1501987072
 GameObject:
   m_ObjectHideFlags: 0
