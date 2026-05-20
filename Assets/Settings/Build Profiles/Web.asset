@@ -37,7 +37,8 @@ MonoBehaviour:
     - line: '|   accelerometerFrequency: 60'
     - line: '|   companyName: evilmarcie'
     - line: '|   productName: catpot'
-    - line: '|   defaultCursor: {instanceID: 0}'
+    - line: '|   defaultCursor: {fileID: 2800000, guid: b366a7ba4ad316740badb15d5a2625f9,
+        type: 3}'
     - line: '|   cursorHotspot: {x: 0, y: 0}'
     - line: '|   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b:
         0.1254902, a: 1}'
