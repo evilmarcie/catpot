@@ -19,7 +19,11 @@ public class Timer : MonoBehaviour
             else if (remainingTime < 0)
             {
                 remainingTime = 0;
-                GameManager.instance.GameOver();
+                // Ensure game hasn't already been won
+                if (!GameManager.instance.WinScreen.activeSelf)
+                {
+                    GameManager.instance.GameOver();
+                }
             }
         }    
 

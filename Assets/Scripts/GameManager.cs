@@ -110,7 +110,7 @@ public class GameManager : MonoBehaviour
         yield return null;
     }
 
-    [SerializeField] GameObject WinScreen;
+    [SerializeField] public GameObject WinScreen;
 
     IEnumerator EndGame()
     {
