@@ -80,6 +80,7 @@ public class GameManager : MonoBehaviour
     private int maxRounds = 7;
     [SerializeField] Transform gameCanvas;
 
+
     public void FundBar()
     {
         fundSpriteInt ++;
@@ -90,6 +91,7 @@ public class GameManager : MonoBehaviour
     }
 
     [SerializeField] Animator fundBarAnim;
+    [SerializeField] GameObject BGfade;
 
     IEnumerator BeatRound()
     {
@@ -111,7 +113,9 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSecondsRealtime(1.5f);
             jackpotPopup.SetActive(false);
             fundBarAnim.SetTrigger("BarPopup");
+            BGfade.SetActive(true);
             yield return new WaitForSecondsRealtime(1.5f);
+            BGfade.SetActive(false);
             
             if(timerCont.isPulsing == true)
             {

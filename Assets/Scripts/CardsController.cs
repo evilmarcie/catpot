@@ -53,6 +53,7 @@ public class CardsController : MonoBehaviour
     }
 
     public Card cardPrefab;
+    public GameObject cardNested;
     [SerializeField] public Transform cardSpace; 
 
     public void CreateCards()
@@ -61,7 +62,8 @@ public class CardsController : MonoBehaviour
 
         for (int i = 0; i < spritePairs.Count; i++)
         {
-            Card card = Instantiate(cardPrefab, cardSpace);
+            GameObject cardParent = Instantiate(cardNested, cardSpace);
+            Card card = cardParent.GetComponentInChildren<Card>();
             card.SetSprite(spritePairs[i]);
             card.controller = this;
         }
