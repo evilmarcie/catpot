@@ -196,6 +196,6 @@ public class GameManager : MonoBehaviour
     void JackpotPopup()
     {
         jackpotPopup.SetActive(true);
-        sfxManager.instance.PlaySFX(sfxManager.instance.jackpot_sfx, 1f);
+        sfxManager.instance.PlaySFX(sfxManager.instance.jackpot_sfx, 0.9f);
     }
 }

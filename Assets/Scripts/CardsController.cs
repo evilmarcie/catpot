@@ -124,10 +124,12 @@ public class CardsController : MonoBehaviour
 
     IEnumerator CheckMatch(Card a, Card b)
     {
+        firstSelected = null;
+        secondSelected = null;
         yield return new WaitForSeconds(0.5f);
         if(a.cardFront == b.cardFront)
         {
-            sfxManager.instance.PlaySFX(sfxManager.instance.match_sfx, 0.5f);
+            sfxManager.instance.PlaySFX(sfxManager.instance.happy_cat_1, 1f);
             a.FadeCard();
             b.FadeCard();
             catExpressions.SetTrigger("Happy");
@@ -140,13 +142,13 @@ public class CardsController : MonoBehaviour
         }
         else
         {
-            sfxManager.instance.PlaySFX(sfxManager.instance.incorrectMatch_sfx, 0.5f);
+            int rand = Random.Range(0, sfxManager.instance.audioClips.Length);
+            sfxManager.instance.PlaySFX(sfxManager.instance.audioClips[rand], 1f);
             catExpressions.SetTrigger("Sad");
             a.TriggerFlip();
             b.TriggerFlip();
         }
-        firstSelected = null;
-        secondSelected = null;
+        
 
         yield break;
 

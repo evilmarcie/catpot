@@ -21,10 +21,11 @@ public class sfxManager : MonoBehaviour
         Destroy(audioSource.gameObject, clipLength);
     }
 
+    public AudioClip[] audioClips;
+
     public AudioClip 
         cardFlip_sfx, 
-        match_sfx, 
-        incorrectMatch_sfx, 
+        happy_cat_1, 
         jackpot_sfx, 
         popclick_sfx, 
         click_sfx, 
