@@ -25,6 +25,8 @@ public class sfxManager : MonoBehaviour
 
     public AudioClip 
         cardFlip_sfx, 
+        match_sfx,
+        incorrectmatch_sfx,
         happy_cat_1, 
         jackpot_sfx, 
         popclick_sfx, 

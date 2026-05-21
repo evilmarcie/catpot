@@ -129,6 +129,7 @@ public class CardsController : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         if(a.cardFront == b.cardFront)
         {
+            sfxManager.instance.PlaySFX(sfxManager.instance.match_sfx, 1f);
             sfxManager.instance.PlaySFX(sfxManager.instance.happy_cat_1, 1f);
             a.FadeCard();
             b.FadeCard();
@@ -142,6 +143,7 @@ public class CardsController : MonoBehaviour
         }
         else
         {
+            sfxManager.instance.PlaySFX(sfxManager.instance.incorrectmatch_sfx, 1f);
             int rand = Random.Range(0, sfxManager.instance.audioClips.Length);
             sfxManager.instance.PlaySFX(sfxManager.instance.audioClips[rand], 1f);
             catExpressions.SetTrigger("Sad");

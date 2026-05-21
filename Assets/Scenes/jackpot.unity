@@ -2872,6 +2872,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0e9a36f4a70c44e5f98a7cc5652c1a42, type: 3}
   - {fileID: 8300000, guid: 8bc6b83a2de354ba4b607750abc44f4f, type: 3}
   cardFlip_sfx: {fileID: 8300000, guid: e987c8d5d57abb7418700c0bc6fb98d2, type: 3}
+  match_sfx: {fileID: 8300000, guid: 1b87853bfd18eba448e74f2640cc9a75, type: 3}
+  incorrectmatch_sfx: {fileID: 8300000, guid: f225f56ca2d8704448173e664c08779b, type: 3}
   happy_cat_1: {fileID: 8300000, guid: 16ed5a16a4ab4456e8414570adc9e04f, type: 3}
   jackpot_sfx: {fileID: 8300000, guid: e279d2b17a54b39478dad2b748a3cd34, type: 3}
   popclick_sfx: {fileID: 8300000, guid: 1b87853bfd18eba448e74f2640cc9a75, type: 3}
