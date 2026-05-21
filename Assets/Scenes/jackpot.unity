@@ -2865,9 +2865,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundEffects
   sfxPlayer: {fileID: 3977491000994907447, guid: c75dc5c1183505a498c05534067fe7d4, type: 3}
+  audioClips:
+  - {fileID: 8300000, guid: 74476d35cb00241a39d9499b81c09eea, type: 3}
+  - {fileID: 8300000, guid: 93d2153a3a2164d55b48a885a7e56761, type: 3}
+  - {fileID: 8300000, guid: 2c68c5905bd1c4da9b2d4b737146048c, type: 3}
+  - {fileID: 8300000, guid: 0e9a36f4a70c44e5f98a7cc5652c1a42, type: 3}
+  - {fileID: 8300000, guid: 8bc6b83a2de354ba4b607750abc44f4f, type: 3}
   cardFlip_sfx: {fileID: 8300000, guid: e987c8d5d57abb7418700c0bc6fb98d2, type: 3}
-  match_sfx: {fileID: 8300000, guid: 197a5ecbe7e873442bc0ffd80877b4a8, type: 3}
-  incorrectMatch_sfx: {fileID: 8300000, guid: f225f56ca2d8704448173e664c08779b, type: 3}
+  happy_cat_1: {fileID: 8300000, guid: 16ed5a16a4ab4456e8414570adc9e04f, type: 3}
   jackpot_sfx: {fileID: 8300000, guid: e279d2b17a54b39478dad2b748a3cd34, type: 3}
   popclick_sfx: {fileID: 8300000, guid: 1b87853bfd18eba448e74f2640cc9a75, type: 3}
   click_sfx: {fileID: 8300000, guid: 70f47fb25a4d9d74d87eae137a18c6aa, type: 3}
@@ -2876,6 +2881,7 @@ MonoBehaviour:
   crying_sfx: {fileID: 8300000, guid: 00dbaf0a27050f6418eb07d26be965ff, type: 3}
   clock_tick: {fileID: 8300000, guid: d71b5458a31f94110a0d9286948af874, type: 3}
   bell: {fileID: 8300000, guid: e279d2b17a54b39478dad2b748a3cd34, type: 3}
+  money: {fileID: 8300000, guid: 94964edbec4294866a54e36021be31ba, type: 3}
 --- !u!1 &1398300702
 GameObject:
   m_ObjectHideFlags: 0
