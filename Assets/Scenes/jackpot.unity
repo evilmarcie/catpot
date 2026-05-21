@@ -2879,7 +2879,7 @@ MonoBehaviour:
   tutorialPageTurn_sfx: {fileID: 8300000, guid: e987c8d5d57abb7418700c0bc6fb98d2, type: 3}
   yay_sfx: {fileID: 8300000, guid: 4e2553dc0dfb3074bb8981684268cc85, type: 3}
   crying_sfx: {fileID: 8300000, guid: 00dbaf0a27050f6418eb07d26be965ff, type: 3}
-  clock_tick: {fileID: 8300000, guid: d71b5458a31f94110a0d9286948af874, type: 3}
+  clock_tick: {fileID: 8300000, guid: 7a086fc2e9b4d4f658596c7204799582, type: 3}
   bell: {fileID: 8300000, guid: e279d2b17a54b39478dad2b748a3cd34, type: 3}
   money: {fileID: 8300000, guid: 94964edbec4294866a54e36021be31ba, type: 3}
 --- !u!1 &1398300702

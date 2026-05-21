@@ -13,6 +13,8 @@ public class Timer : MonoBehaviour
     [SerializeField] Animator textAnimator;
     public bool isPulsing = false;
     bool hasPlayedDing = false;
+    int prevClockSFXSecond;
+    bool triggerClockSFX = false;
     Color32 warningColor = new Color32(167, 52, 82, 255);
 
     void Update()
@@ -48,8 +50,19 @@ public class Timer : MonoBehaviour
                 {
                     timer.color = warningColor;
                     textAnimator.SetTrigger("Pulse");
-                    sfxManager.instance.PlaySFX(sfxManager.instance.clock_tick, 0.6f);
                     isPulsing = true;
+                    triggerClockSFX = true;
+                }
+                if (triggerClockSFX)
+                {
+                    sfxManager.instance.PlaySFX(sfxManager.instance.clock_tick, 0.6f);
+                    prevClockSFXSecond = Mathf.FloorToInt(remainingTime);
+                    triggerClockSFX = false;
+                }
+                // trigger clock sfx every second (excluding last second)
+                if (Mathf.FloorToInt(remainingTime) < prevClockSFXSecond && remainingTime > 1)
+                {
+                    triggerClockSFX = true;
                 }
             }
         }    
