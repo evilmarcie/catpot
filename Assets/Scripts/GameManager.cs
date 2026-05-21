@@ -86,6 +86,7 @@ public class GameManager : MonoBehaviour
         fundSpriteInt ++;
         if (fundSpriteInt < AdoptionFundSprites.Length)
         {
+            sfxManager.instance.PlaySFX(sfxManager.instance.money, 0.8f);
             adoptionFund.sprite = AdoptionFundSprites[fundSpriteInt];   
         }
     }

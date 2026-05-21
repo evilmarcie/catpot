@@ -33,5 +33,6 @@ public class sfxManager : MonoBehaviour
         yay_sfx, 
         crying_sfx,
         clock_tick,
-        bell;
+        bell,
+        money;
 }
